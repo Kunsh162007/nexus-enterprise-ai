@@ -6,7 +6,7 @@ NEXUS is a **collaborative multi-agent AI system** that transforms how enterpris
 
 [![Built with Gemini](https://img.shields.io/badge/AI-Google%20Gemini-4285F4?style=flat-square)](https://ai.google.dev)
 [![Voice by Speechmatics](https://img.shields.io/badge/Voice-Speechmatics-FF6B35?style=flat-square)](https://speechmatics.com)
-[![Deployed on Vultr](https://img.shields.io/badge/Infra-Vultr-007BFC?style=flat-square)](https://vultr.com)
+[![Deployed on Render](https://img.shields.io/badge/Deployed-Render-46E3B7?style=flat-square&logo=render)](https://nexus-frontend-ksfn.onrender.com)
 [![Models by Featherless](https://img.shields.io/badge/Models-Featherless-8B5CF6?style=flat-square)](https://featherless.ai)
 
 ---
@@ -14,6 +14,7 @@ NEXUS is a **collaborative multi-agent AI system** that transforms how enterpris
 ## 🎯 The Problem We Solve
 
 Enterprise decisions suffer from **cognitive fragmentation**:
+
 - Sales team sees an opportunity; Risk team hasn't assessed it
 - Operations spots a crisis; Communications hasn't drafted a response
 - Strategy proposes an initiative; Finance hasn't modeled it
@@ -70,11 +71,13 @@ The average Fortune 500 company spends **6-8 weeks** coordinating a major strate
 ## 🚀 Quick Start (Local)
 
 ### Prerequisites
+
 - Docker & Docker Compose
 - Node.js 18+
 - Python 3.11+
 
 ### 1. Clone & Configure
+
 ```bash
 git clone https://github.com/YOUR_USERNAME/nexus-enterprise-ai
 cd nexus-enterprise-ai
@@ -83,13 +86,15 @@ cp .env.example .env
 ```
 
 ### 2. Start with Docker Compose
+
 ```bash
 docker-compose up --build
 ```
 
 ### 3. Access
-- Frontend: http://localhost:3000
-- API Docs: http://localhost:8000/docs
+
+- Frontend: <http://localhost:3000>
+- API Docs: <http://localhost:8000/docs>
 - WebSocket: ws://localhost:8000/ws
 
 ---
