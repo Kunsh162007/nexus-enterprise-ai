@@ -1,0 +1,36 @@
+name: NEXUS — Deploy to Vultr
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vultr VM via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.VULTR_HOST }}
+          username: root
+          key: ${{ secrets.VULTR_SSH_KEY }}
+          script: |
+            cd /opt/nexus
+            git pull origin main
+            docker-compose build --no-cache
+            docker-compose up -d --force-recreate
+            echo "✅ NEXUS deployed at $(date)"
+
+      - name: Health Check
+        run: |
+          sleep 15
+          curl -f http://${{ secrets.VULTR_HOST }}/health || echo "Health check failed"
+
+      - name: Notify
+        if: always()
+        run: |
+          echo "Deployment ${{ job.status }} for commit ${{ github.sha }}"
