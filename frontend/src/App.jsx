@@ -57,10 +57,10 @@ export default function App() {
         <Header isConnected={isConnected} sessionStatus={sessionStatus} currentPhase={currentPhase} />
 
         {/* Main Content */}
-        <div className="flex-1 overflow-hidden flex gap-0">
-          
+        <div className="flex-1 overflow-y-auto lg:overflow-hidden flex flex-col lg:flex-row gap-0">
+
           {/* Left Panel: Input + Agents */}
-          <div className="flex-1 flex flex-col overflow-hidden p-4 gap-4 min-w-0">
+          <div className="flex-1 flex flex-col overflow-hidden p-4 gap-4 min-w-0 min-h-[70vh] lg:min-h-0">
             
             {/* Input Panel */}
             <InputPanel
@@ -83,7 +83,7 @@ export default function App() {
           </div>
 
           {/* Right Panel: Activity + Report */}
-          <div className="w-80 flex-shrink-0 flex flex-col border-l border-nexus-border overflow-hidden">
+          <div className="w-full lg:w-80 flex-shrink-0 flex flex-col border-t lg:border-t-0 lg:border-l border-nexus-border overflow-hidden min-h-[60vh] lg:min-h-0">
             
             {/* Tab Toggle */}
             <div className="flex border-b border-nexus-border">
